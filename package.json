@@ -7,7 +7,7 @@
   "author": "melongz <1945857873@qq.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js"
   },
   "dependencies": {
     "lodash": "^4.17.15"
