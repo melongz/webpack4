@@ -1,0 +1,19 @@
+{
+  "name": "webpack4_demo",
+  "version": "1.0.0",
+  "description": "用于学习webpack4",
+  "private": true,
+  "repository": "https://github.com/melongz/webpack4.git",
+  "author": "melongz <1945857873@qq.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack --config webpack.config.js"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
