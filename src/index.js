@@ -1,9 +1,12 @@
 import './style/index.css';
-import {logName, logText} from './js/log';
+import { logName } from './js/log';
+import tsLog from './tsLog.ts';
+
 logName();
+tsLog('aaa');
 
 document.body.innerHTML = `
   <div>
     <h5>hello world</h5>
   </div>
-`
+`;
