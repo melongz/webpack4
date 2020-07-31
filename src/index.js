@@ -1,6 +1,6 @@
 import './style/index.css';
 import { logName } from './js/log';
-import tsLog from './tsLog.ts';
+import tsLog from 'src/tsLog.ts';
 
 logName();
 tsLog('aaa');

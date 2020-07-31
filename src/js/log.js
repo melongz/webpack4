@@ -1,4 +1,3 @@
-
 export const logName = function () {
   console.log(process.env.NODE_ENV);
 };
