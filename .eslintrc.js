@@ -4,6 +4,10 @@ module.exports = {
     es2020: true,
     node: true,
   },
+  globals: {
+    GLOBAL_TEST: 'readonly',
+    _: 'readonly',
+  },
   extends: [
     'airbnb-base',
     'plugin:react/recommended',

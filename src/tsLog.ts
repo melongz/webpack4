@@ -1,3 +1,3 @@
-export default function (name: 'bbb' | 'aaa') {
+export default function (name: any) {
   console.log(name);
 }

@@ -3,7 +3,7 @@ import './style/index.css';
 import { logName } from './js/log';
 
 logName();
-tsLog('aaa');
+tsLog(_);
 
 document.body.innerHTML = `
   <div>
