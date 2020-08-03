@@ -6,7 +6,7 @@ module.exports = {
   },
   globals: {
     GLOBAL_TEST: 'readonly',
-    // _: 'readonly',
+    _: 'readonly',
   },
   extends: [
     'airbnb-base',
