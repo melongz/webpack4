@@ -21,7 +21,6 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: [
-    'vue',
     'react',
     '@typescript-eslint',
   ],
@@ -33,15 +32,11 @@ module.exports = {
         'plugin:@typescript-eslint/recommended',
       ],
     },
-    {
-      files: ['*.vue'],
-      extends: [
-        'plugin:vue/recommended',
-      ],
-    },
   ],
   rules: {
     'import/no-extraneous-dependencies': 0,
     'global-require': 0,
+    'import/extensions': [1, { extensions: ['.tsx', '.ts', '.js'] }],
+    'import/no-unresolved': 0,
   },
 };

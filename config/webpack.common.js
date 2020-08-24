@@ -8,7 +8,7 @@ module.exports = {
 
   // 多入口
   entry: {
-    app: './src/index.js',
+    app: './src/index.tsx',
   },
 
   output: {
@@ -20,7 +20,7 @@ module.exports = {
 
     // 用于自动生成index.html文件
     new HtmlWebpackPlugin({
-      title: 'melongz',
+      template: path.resolve(__dirname, '../public/index.html'),
     }),
 
     // 可以定义变量，在src的代码中也能访问
