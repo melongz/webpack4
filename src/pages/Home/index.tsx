@@ -21,6 +21,10 @@ function Main() {
     return desc;
   }
 
+  function identity<T>(arg: T): T {
+    return arg;
+  }
+
   useEffect(() => {
     const melongz: Person = {
       name: 'melongz',
