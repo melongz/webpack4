@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "项目搭建",
   "private": true,
-  "repository": "https://github.com/melongz/webpack4.git",
   "author": "melongz <1945857873@qq.com>",
   "license": "MIT",
   "scripts": {

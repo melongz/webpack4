@@ -3,10 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-  // 单入口
-  // entry: './src/index.js',
 
-  // 多入口
   entry: {
     app: './src/index.tsx',
   },
@@ -23,7 +20,7 @@ module.exports = {
       template: path.resolve(__dirname, '../public/index.html'),
     }),
 
-    // 可以定义变量，在src的代码中也能访问
+    // 定义全局变量
     new webpack.DefinePlugin({ GLOBAL_TEST: JSON.stringify('我是全局变量') }),
 
     // 引入全局依赖

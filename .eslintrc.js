@@ -31,6 +31,10 @@ module.exports = {
       extends: [
         'plugin:@typescript-eslint/recommended',
       ],
+      rules: {
+        // 为做演示，暂时允许可推断类型标明类型，实际开发中去掉
+        '@typescript-eslint/no-inferrable-types': 0,
+      },
     },
   ],
   rules: {
