@@ -41,7 +41,7 @@ function borderButton<P>(WrappedComponent: React.ComponentType<P>) {
 const BorderButton = borderButton(Button);
 
 function Main({title}: HomePropsType) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState<number>(0);
   useEffect(() => {
     console.log(GLOBAL_TEST);
   }, []);
