@@ -5,7 +5,7 @@ const common = require('./webpack.common.js');
 
 const dev = {
   mode: 'development',
-  devtool: 'inline-source-map',
+  // devtool: 'inline-source-map',
   devServer: {
     contentBase: path.join(__dirname, '../dist'),
     compress: true,
@@ -13,7 +13,6 @@ const dev = {
     hot: true,
   },
   plugins: [
-    // 模块热替换
     new webpack.HotModuleReplacementPlugin(),
   ],
 };
