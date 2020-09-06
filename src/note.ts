@@ -170,6 +170,25 @@ let fn3: (name: string, age?: number) => string
 
 
 /*
+* 类型断言
+* */
+// 手动指定一个值的类型
+function getLength(val: string | number): number {
+  return (val as string).length;
+  // return (<string>val).length; // jsx不支持这种写法
+}
+// 非必要情况下，不要使用类型断言
+interface P3 {
+  name: number;
+  age: string;
+}
+const foo = <P3>{
+  name: 123, // 没有age属性，但不会报错
+};
+
+
+
+/*
 * 泛型
 * */
 
