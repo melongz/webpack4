@@ -48,5 +48,9 @@ module.exports = {
     'arrow-parens': 0,
     // 可以使用console
     'no-console': 0,
+    // 取消每行限制长度
+    'max-len': 0,
+    // 取消prop-types校验
+    'react/prop-types': 0,
   },
 };

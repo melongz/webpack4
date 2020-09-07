@@ -17,7 +17,7 @@ class App extends React.Component<PropsType, StateType> {
   }
 
   static defaultProps = {
-    subTitle: 'hello'
+    subTitle: 'hello',
   }
 
   render() {

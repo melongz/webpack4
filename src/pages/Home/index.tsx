@@ -6,7 +6,7 @@ interface HomePropsType {
 
 interface ButtonPropsType {
   text: '确认' | '取消' | React.ReactNode;
-  onClick?(e: React.MouseEvent): void;
+  onClick?(e: React.MouseEvent<HTMLButtonElement>): void;
 }
 
 interface HOCType {
@@ -20,14 +20,14 @@ const style = {
   width: '100px',
   height: '100px',
   border: '1px solid red',
-}
+};
 
 // 无状态函数组件
-const Button: React.FunctionComponent<ButtonPropsType> = ({text, onClick}) => <button onClick={onClick}>{text}</button>
+const Button: React.FunctionComponent<ButtonPropsType> = ({ text, onClick }) => <button onClick={onClick}>{text}</button>;
 
 // 高阶组件
 function borderButton<P>(WrappedComponent: React.ComponentType<P>) {
-  return class extends React.Component<P & HOCType> {
+  return class Btn extends React.Component<P & HOCType> {
     render() {
       const { isShowBorder, ...props } = this.props;
       return (
@@ -36,11 +36,12 @@ function borderButton<P>(WrappedComponent: React.ComponentType<P>) {
         </div>
       );
     }
-  }
+  };
 }
 const BorderButton = borderButton(Button);
 
-function Main({title}: HomePropsType) {
+// hooks组件
+function Main({ title }: HomePropsType) {
   const [count, setCount] = useState<number>(0);
   useEffect(() => {
     console.log(GLOBAL_TEST);

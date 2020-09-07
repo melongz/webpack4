@@ -9,14 +9,14 @@
 // type 可以声明基础类型，联合类型，元组等类型，可以使用别名，可以使用typeof获取实例的类型进行赋值，还可以使用 in 关键字生成映射类型
 type type1 = string; // 基础类型
 type type2 = type1; // 别名
-type type3 = "firstName" | "lastName";
+type type3 = 'firstName' | 'lastName';
 type type4 = {
   [key in type3]: string; // 使用 in 关键字生成映射类型
 }
 const type: type4 = {
-  firstName: "aaa",
-  lastName: "bbb"
-}
+  firstName: 'aaa',
+  lastName: 'bbb',
+};
 // interface 可以声明合并
 interface interface1 {
   name: string;
@@ -24,8 +24,6 @@ interface interface1 {
 interface interface1 {
   age: number;
 }
-
-
 
 /*
 * 基础类型
@@ -81,21 +79,19 @@ function error(message: string): never {
 }
 // eg
 type NeverType = number | string;
-function neverFn (val: NeverType): string {
+function neverFn(val: NeverType): string {
   let desc = '';
   if (typeof val === 'number') {
     desc = '我是数字';
   } else if (typeof val === 'string') {
     desc = '我是字符串';
   } else {
-    const neverVal: never = val
+    const neverVal: never = val;
   }
   return desc;
 }
 
 // Object、Null、Undefined使用频率很少，不做讨论
-
-
 
 /*
 * 常见定义类型写法
@@ -122,7 +118,7 @@ const person: P = {
   logMsg(msg) {
     console.log(msg);
   },
-}
+};
 
 // 使用type
 type LikeColor = 'red' | 'green' | 'blue';
@@ -131,7 +127,7 @@ type P2 = P;
 const person2: P2 = { name: '小明' };
 
 // 使用联合类型
-const unionType1: string | number = Math.random() > .5 ? 3 : 'hello';
+const unionType1: string | number = Math.random() > 0.5 ? 3 : 'hello';
 const unionType2: 'aaa' | 'bbb' | 'ccc' = 'bbb';
 
 // 使用交叉类型
@@ -147,27 +143,24 @@ type CrossC = CrossA & CrossB;
 const cross = {
   name: 'aaa',
   sex: 'man',
-}
+};
 
 // 为函数定义类型
 // eg1:
-function fn1 (name: string, age?: number): string {
-  return name + age;
+function fn1(name: string, age1?: number): string {
+  return name + age1;
 }
 // eg2:
 interface Fn2 {
   (name: string, age?: number): string;
 }
-let fn2: Fn2 = function (name, age) {
-  return name + age
-}
+const fn2: Fn2 = function (name, age2) {
+  return name + age2;
+};
 // eg3:
-let fn3: (name: string, age?: number) => string
-  = function (name, age) {
-  return name + age;
-}
-
-
+const fn3: (name: string, age?: number) => string = function (name, age3) {
+  return name + age3;
+};
 
 /*
 * 类型断言
@@ -186,8 +179,6 @@ const foo = <P3>{
   name: 123, // 没有age属性，但不会报错
 };
 
-
-
 /*
 * 泛型
 * */
@@ -197,15 +188,15 @@ const foo = <P3>{
 
 // eg:
 function getId<T>(arg: T): T {
-  return arg
+  return arg;
 }
 getId<string>('123'); // 完整写法
-getId("456"); // 类型推导
+getId('456'); // 类型推导
 
 // 默认参数
 type A<T = string> = Array<T>;
 // const aa: A = [1];
-const bb: A = ["1"]; // ok
+const bb: A = ['1']; // ok
 const cc: A<number> = [1]; // ok
 
 // 对值编程、对类型编程
@@ -216,14 +207,14 @@ type ListNode<T> = {
   next: ListNode<T> | null;
 };
 const listNode = {
-  data: { name: 'aaa', age: 999},
+  data: { name: 'aaa', age: 999 },
   next: {
-    data: {name: 'bbb', age: 888},
+    data: { name: 'bbb', age: 888 },
     next: {
-      data: {name: 'ccc', age: 777},
-    }
-  }
-}
+      data: { name: 'ccc', age: 777 },
+    },
+  },
+};
 // eg2:
 // 现有Person接口，要求添加一个phone属性，phone为必填，其他为选填
 interface PersonInfo {
@@ -236,4 +227,4 @@ type Person2 = PartialType<PersonInfo> & { phone: string};
 const p2: Person2 = {
   phone: '18222222222',
   sex: 'Man',
-}
+};
