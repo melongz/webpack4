@@ -18,10 +18,10 @@ const type: type4 = {
   lastName: 'bbb',
 };
 // interface 可以声明合并
-interface interface1 {
+interface Interface1 {
   name: string;
 }
-interface interface1 {
+interface Interface1 {
   age: number;
 }
 
@@ -91,7 +91,7 @@ function neverFn(val: NeverType): string {
   return desc;
 }
 
-// Object、Null、Undefined使用频率很少，不做讨论
+// Object、Null、Undefined使用频率很少
 
 /*
 * 常见定义类型写法
